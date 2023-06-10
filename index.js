@@ -110,7 +110,7 @@ discordListener.on(discord.Events.MessageCreate, async (m) => {
                     url: groupmeImageUrl,
                 });
             } catch (err) {
-                console.log('***** Error downloading or uploading to Groupme Image Service; adding original image url as text');
+                console.log('***** Error downloading or uploading to GroupMe Image Service; adding original image url as text');
                 console.log(err);
                 text += ' ' + a.url;
             }
