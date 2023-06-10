@@ -13,7 +13,7 @@ TODO: add something about my stubborn friend here.
 ```sh
 git clone git@github.com:emilh91/dgs.git # or via https
 cd dgs
-npm install
+npm ci
 cp .template.env .env
 # fill in .env (see next section)
 ```
