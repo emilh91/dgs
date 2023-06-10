@@ -36,7 +36,6 @@ function getGroupmeMentionAttachment(text) {
 }
 
 function getGroupmeMentionName(discordUser) {
-    console.log(discordUser);
     let mu = null;
     if (discordUser.bot) {
         const username = discordUser.username.replace(' (from GroupMe)', '');
