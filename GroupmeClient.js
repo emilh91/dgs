@@ -46,6 +46,14 @@ module.exports = class GroupmeClient {
         return uploadResponse.data.payload.url; // or .picture_url
     }
 
+    async getGroups() {
+        const response = await axios({
+            method: 'get',
+            url: `https://api.groupme.com/v3/groups?token=${this.#apiToken}`,
+        });
+        return response.data;
+    }
+
     async sendBotMessage(botId, text, attachments=[]) {
         const response = await axios({
             method: 'post',
