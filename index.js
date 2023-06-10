@@ -3,6 +3,7 @@ const discord = require('discord.js');
 const express = require('express');
 const bodyParser = require('body-parser')
 const GroupmeClient = require('./GroupmeClient');
+const USERS = require('./USERS.json');
 
 const {
     PORT, EMOJI_URL,
@@ -11,10 +12,6 @@ const {
 } = process.env;
 
 const groupmeClient = new GroupmeClient(GROUPME_API_TOKEN);
-
-const USERS = [
-    // TODO: move this out
-];
 
 function getGroupmeMentionAttachment(text) {
     const mentionAttachment = {

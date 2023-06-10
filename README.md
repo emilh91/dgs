@@ -14,6 +14,7 @@ TODO: add something about my stubborn friend here.
 git clone git@github.com:emilh91/dgs.git # or via https
 cd dgs
 npm ci
+echo "[]" > USERS.json
 cp .template.env .env
 # fill in .env (see next section)
 ```
