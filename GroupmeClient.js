@@ -7,7 +7,7 @@ module.exports = class GroupmeClient {
     #apiToken;
 
     constructor(apiToken) {
-        this.apiToken = apiToken;
+        this.#apiToken = apiToken;
     }
 
     async makeBot(groupId, name, avatarURL, callbackURL, dmNotification=true, active=true) {
