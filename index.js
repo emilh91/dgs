@@ -142,7 +142,7 @@ discordListener.on(discord.Events.MessageReactionAdd, async (reaction, user) => 
     }
 
     const reactee = getGroupmeMentionName(reaction.message.author);
-    let text = `reacted with ${reaction.emoji.name} to @${reactee}'s message:\n"${reaction.message.content}"`;
+    let text = `reacted with ${reaction.emoji.name} to ${reactee}'s message:\n"${reaction.message.content}"`;
 
     const botid = getGroupmeBotId(user.id);
     if (!botid) {
