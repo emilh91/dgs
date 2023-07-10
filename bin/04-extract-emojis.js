@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const sharp = require('sharp');
 
 const S = 40; // emoji height (and width)
