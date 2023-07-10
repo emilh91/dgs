@@ -8,3 +8,5 @@ USERS.json
 
 scratch/*.js
 scratch/*.ts
+
+assets/emoji-*.png
