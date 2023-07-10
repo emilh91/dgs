@@ -5,3 +5,6 @@ node_modules/
 .DS_Store
 
 USERS.json
+
+scratch/*.js
+scratch/*.ts

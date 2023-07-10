@@ -33,3 +33,8 @@ node bin/01-list-groups.js
 # make note (e.g. copy) the id of the group from the output
 node bin/02-generate-user-mappings.js $GROUP_ID
 ```
+
+### Scratch
+
+The `scratch` folder is used for testing either GroupMe or Discord things.  
+Scripts in that folder are git-ignored.
