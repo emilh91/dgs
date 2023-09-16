@@ -57,6 +57,10 @@ function getEmojiUrl(pack, index) {
     return url;
 }
 
+function sleep(millis) {
+    return new Promise(resolve => setTimeout(resolve, millis));
+}
+
 const discordListener = new discord.Client({
     intents: [
         discord.GatewayIntentBits.Guilds,
@@ -127,7 +131,15 @@ discordListener.on(discord.Events.MessageCreate, async (m) => {
         text = `${m.author.username} posted: ${text}`;
     }
 
-    groupmeClient.sendBotMessage(botid||GROUPME_FALLBACK_BOT_ID, text, attachments);
+    let startIndex = 0;
+    const MAX_TEXT_PIECE_LENGTH = 1000; // max for GroupMe
+    do {
+        const endIndex = startIndex + MAX_TEXT_PIECE_LENGTH;
+        const piece = text.substring(startIndex, endIndex);
+        groupmeClient.sendBotMessage(botid||GROUPME_FALLBACK_BOT_ID, piece, attachments);
+        startIndex = endIndex;
+        sleep(100);
+    } while (startIndex < text.length);
 });
 discordListener.on(discord.Events.MessageReactionAdd, async (reaction, user) => {
     if (reaction.partial) {
