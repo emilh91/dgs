@@ -138,7 +138,7 @@ discordListener.on(discord.Events.MessageCreate, async (m) => {
         const piece = text.substring(startIndex, endIndex);
         groupmeClient.sendBotMessage(botid||GROUPME_FALLBACK_BOT_ID, piece, attachments);
         startIndex = endIndex;
-        sleep(100);
+        sleep(250);
     } while (startIndex < text.length);
 });
 discordListener.on(discord.Events.MessageReactionAdd, async (reaction, user) => {
