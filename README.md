@@ -37,7 +37,8 @@ node bin/02-generate-user-mappings.js $GROUP_ID
 ### Usage
 
 ```sh
-npm start
+npm run d2g
+npm run g2d
 ```
 
 ### Scratch
