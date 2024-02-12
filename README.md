@@ -6,7 +6,7 @@ TODO: add something about my stubborn friend here.
 
 ### Pre-requisites
 
-- NodeJS (v16 or higher)
+- NodeJS (v20 or higher)
 
 ### Getting Started
 
@@ -32,6 +32,12 @@ Do not update `template.env` unless you know what you are doing.
 node bin/01-list-groups.js
 # make note (e.g. copy) the id of the group from the output
 node bin/02-generate-user-mappings.js $GROUP_ID
+```
+
+### Usage
+
+```sh
+npm start
 ```
 
 ### Scratch

@@ -1,4 +1,3 @@
-require('dotenv').config();
 const discord = require('discord.js');
 const express = require('express');
 const bodyParser = require('body-parser')
