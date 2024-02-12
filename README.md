@@ -29,9 +29,9 @@ Do not update `template.env` unless you know what you are doing.
 ### Generating User Mappings
 
 ```sh
-node bin/01-list-groups.js
+node --env-file=.env bin/01-list-groups.js
 # make note (e.g. copy) the id of the group from the output
-node bin/02-generate-user-mappings.js $GROUP_ID
+node --env-file=.env bin/02-generate-user-mappings.js $GROUP_ID
 ```
 
 ### Usage

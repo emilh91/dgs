@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 
-require('dotenv').config();
 const GroupmeClient = require('../GroupmeClient');
 
 async function main() {

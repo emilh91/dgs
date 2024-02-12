@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 
-require('dotenv').config();
 const fs = require('fs/promises');
 const GroupmeClient = require('../GroupmeClient');
 
