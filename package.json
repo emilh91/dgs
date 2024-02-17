@@ -1,6 +1,6 @@
 {
   "name": "dgs",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "",
   "scripts": {
     "d2g": "node --env-file=.env index-d2g.js",
@@ -13,6 +13,6 @@
     "body-parser": "^1.20.2",
     "discord.js": "^14.14.1",
     "express": "^4.18.2",
-    "sharp": "^0.32.1"
+    "sharp": "^0.33.2"
   }
 }
