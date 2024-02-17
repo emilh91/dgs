@@ -20,8 +20,8 @@ module.exports = class GroupmeClient {
                     callback_url: callbackURL,
                     dm_notification: dmNotification,
                     active,
-                }
-            })
+                },
+            }),
         });
         return response.json();
     }
