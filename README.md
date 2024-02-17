@@ -5,7 +5,7 @@
 One friend group I had (with my Day 1's) used GroupMe for group communication since 2013.  
 We decided it was time to move on to Discord for its better features and more frequent updates.  
 After all, it has been 10 years and GroupMe felt stagnant.  
-However, one friend (@ialbert94) was stubborn and preferred GroupMe for whatever reason.  
+However, one friend ([ialbert94](https://github.com/ialbert94)) was stubborn and preferred GroupMe for whatever reason.  
 As a compromise, I decided to write this little connector to synchronize messages between the two services.  
 This way, those who want to use GroupMe can do so; and those who want to use Discord can do so as well.  
 There isn't complete feature parity, but it does the job adequately enough.  
