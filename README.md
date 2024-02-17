@@ -15,7 +15,7 @@ git clone git@github.com:emilh91/dgs.git # or via https
 cd dgs
 npm ci
 echo "[]" > USERS.json
-cp template.env .env
+cp env.template .env
 # fill in .env (see next section)
 ```
 
@@ -24,7 +24,7 @@ cp template.env .env
 You can get Groupme-related tokens from https://dev.groupme.com/bots .  
 You can get Discord-related tokens from https://discord.com/developers/applications .  
 You will need to add your tokens and secrets to `.env`; this file is git-ignored.  
-Do not update `template.env` unless you know what you are doing.
+Do not update `.env.template` unless you know what you are doing.
 
 ### Generating User Mappings
 
