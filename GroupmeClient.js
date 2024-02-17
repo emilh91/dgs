@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const DEFAULT_BOT_NAME = "New Bot";
 const DEFAULT_BOT_AVATAR_URL = "https://em-content.zobj.net/thumbs/160/apple/354/robot_1f916.png";
 
@@ -11,10 +9,10 @@ module.exports = class GroupmeClient {
     }
 
     async makeBot(groupId, name, avatarURL, callbackURL, dmNotification=true, active=true) {
-        const response = await axios({
-            method: 'post',
-            url: `https://api.groupme.com/v3/bots?token=${this.#apiToken}`,
-            data: {
+        const url = `https://api.groupme.com/v3/bots?token=${this.#apiToken}`;
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
                 bot: {
                     group_id: groupId,
                     name: name || DEFAULT_BOT_NAME,
@@ -23,47 +21,43 @@ module.exports = class GroupmeClient {
                     dm_notification: dmNotification,
                     active,
                 }
-            }
+            })
         });
-        return response.data;
+        return response.json();
     }
 
     async downloadAndUploadImage(url) {
-        const downloadResponse = await axios({
-            method: 'get',
-            url,
-            responseType: 'arraybuffer',
-        });
-        const uploadResponse = await axios({
+        const downloadResponse = await fetch(url);
+        const blob = await downloadResponse.blob();
+
+        const uploadResponse = await fetch('https://image.groupme.com/pictures', {
             method: 'post',
-            url: 'https://image.groupme.com/pictures',
             headers: {
                 'X-Access-Token': this.#apiToken,
                 'Content-Type': downloadResponse.headers.get('Content-Type'),
             },
-            data: downloadResponse.data,
+            body: blob,
         });
-        return uploadResponse.data.payload.url; // or .picture_url
+        const uploadResponseData = await uploadResponse.json();
+        return uploadResponseData.payload.url; // or .picture_url
     }
 
     async getGroups() {
-        const response = await axios({
-            method: 'get',
-            url: `https://api.groupme.com/v3/groups?token=${this.#apiToken}`,
-        });
-        return response.data;
+        const url = `https://api.groupme.com/v3/groups?token=${this.#apiToken}`;
+        const response = await fetch(url);
+        return response.json();
     }
 
     async sendBotMessage(botId, text, attachments=[]) {
-        const response = await axios({
-            method: 'post',
-            url: `https://api.groupme.com/v3/bots/post?token=${this.#apiToken}`,
-            data: {
+        const url = `https://api.groupme.com/v3/bots/post?token=${this.#apiToken}`;
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
                 bot_id: botId,
                 text,
                 attachments,
-            },
+            }),
         });
-        return response.data;
+        return response.json();
     }
 }
