@@ -39,12 +39,22 @@ Do not update `.env.template` unless you know what you are doing.
 node --env-file=.env bin/01-list-groups.js
 # make note (e.g. copy) the id of the group from the output
 node --env-file=.env bin/02-generate-user-mappings.js $GROUP_ID
+# fill in the users' Discord ids (and optionally their bot ids)
 ```
 
-### Usage
+### Making a GroupMe Bot
+
+TODO
+
+### Forwarding from Discord to GroupMe
 
 ```sh
 npm run d2g
+```
+
+### Forwarding from GroupMe to Discord
+
+```sh
 npm run g2d
 ```
 
