@@ -31,7 +31,7 @@ module.exports = class GroupmeClient {
         const blob = await downloadResponse.blob();
 
         const uploadResponse = await fetch('https://image.groupme.com/pictures', {
-            method: 'post',
+            method: 'POST',
             headers: {
                 'X-Access-Token': this.#apiToken,
                 'Content-Type': downloadResponse.headers.get('Content-Type'),
