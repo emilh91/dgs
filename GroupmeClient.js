@@ -58,6 +58,6 @@ module.exports = class GroupmeClient {
                 attachments,
             }),
         });
-        return response.json();
+        return response.status === 201;
     }
 }
