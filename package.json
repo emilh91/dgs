@@ -1,7 +1,7 @@
 {
   "name": "dgs",
   "version": "3.0.6",
-  "description": "",
+  "description": "Discord <-> GroupMe Synchronizer",
   "scripts": {
     "d2g": "node --env-file=.env index-d2g.js",
     "g2d": "node --env-file=.env index-g2d.js",
