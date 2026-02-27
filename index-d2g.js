@@ -82,7 +82,8 @@ async function onMessageCreate(m) {
     }
 
     for (let [_, a] of m.attachments) {
-        if (a.contentType.startsWith('image')) {
+        let contentType = a.contentType || '';
+        if (contentType.startsWith('image')) {
             try {
                 const groupmeImageUrl = await groupmeClient.downloadAndUploadImage(a.url);
                 attachments.push({
